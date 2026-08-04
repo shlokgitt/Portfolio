@@ -81,7 +81,6 @@ export function Contact() {
             marginTop: "3.5rem",
           }}
         >
-          Nothing remains but beauty.
         </p>
         <p
           style={{
