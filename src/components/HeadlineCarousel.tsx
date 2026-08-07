@@ -4,9 +4,9 @@ import { useEffect, useRef, MutableRefObject } from "react";
 
 /* ── Headline data ──────────────────────────────────── */
 const HEADLINES = [
-  { lines: ["Form Dissolves Into", "Pure Emotion"] },
-  { lines: ["Every Surface Catches", "The Light"] },
-  { lines: ["Nothing Remains", "But Beauty"] },
+  { lines: ["I Design & Build", "Web Applications"] },
+  { lines: ["Full-Stack Developer", "Open Source Contributor"] },
+  { lines: ["Turning Ideas Into", "Working Products"] },
 ];
 
 interface Props {

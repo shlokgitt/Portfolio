@@ -12,7 +12,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Portfolio — Cinematic Experience",
   description:
-    "An ultra-premium, scroll-driven cinematic experience. Form dissolves into pure emotion.",
+    "Portfolio of Shlok — full-stack developer building web applications with React, Next.js, and Node.js.",
   openGraph: {
     title: "Portfolio — Cinematic Experience",
     description:
