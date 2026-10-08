@@ -44,6 +44,17 @@ const projects: Project[] = [
     live: "https://smart-campus-management-three.vercel.app/",
     image: "/projects/smart-campus.png",
   },
+  {
+    id: "03",
+    title: "Code Club",
+    tagline: "Student Developer Community & Events Platform",
+    description:
+      "A community platform for student developers to discover workshops, hackathons, and tech talks. Features an events feed, admin panel, and membership system — built to help developers of every skill level build, compete, and ship together.",
+    tech: ["React", "Next.js", "Tailwind CSS", "Node.js", "MongoDB"],
+    github: "https://github.com/shlokgitt/code-club",
+    live: "https://code-club-self.vercel.app/",
+    image: "/projects/code-club.png",
+  },
 ];
 
 function IconArrowUpRight() {
