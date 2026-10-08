@@ -44,6 +44,17 @@ const projects: Project[] = [
     live: "https://shlokgitt.github.io/web-project/",
     image: "/projects/travelgo.png",
   },
+  {
+    id: "03",
+    title: "Smart Campus",
+    tagline: "Unified Campus Management & Administration Platform",
+    description:
+      "A full-stack campus management system connecting students, faculty, and administrators in one place. Covers attendance tracking, assignment submissions, notifications, and role-based portals — all accessible from a single, unified interface.",
+    tech: ["React", "Next.js", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
+    github: "https://github.com/shlokgitt/Smart-Campus-management",
+    live: "https://smart-campus-management-three.vercel.app/",
+    image: "/projects/smart-campus.png",
+  },
 ];
 
 function IconArrowUpRight() {
