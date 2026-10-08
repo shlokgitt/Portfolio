@@ -35,17 +35,6 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    title: "Travel Booking",
-    tagline: "Cinematic Travel Itinerary Planner & Booking System",
-    description:
-      "An interactive travel platform for crafting visual itineraries, browsing curated destinations, and managing reservations. Integrated with mock secure payment gateways and location coordinates map visualization.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "Leaflet"],
-    github: "https://github.com/shlokgitt/web-project",
-    live: "https://shlokgitt.github.io/web-project/",
-    image: "/projects/travelgo.png",
-  },
-  {
-    id: "03",
     title: "Smart Campus",
     tagline: "Unified Campus Management & Administration Platform",
     description:
