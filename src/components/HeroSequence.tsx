@@ -51,6 +51,91 @@ function drawCover(
 }
 
 /* ───────────────────────────────────────────────────────
+   ScrollIndicator — fades out once user starts scrolling
+   ─────────────────────────────────────────────────────── */
+function ScrollIndicator({
+  wrapperRef,
+}: {
+  wrapperRef: MutableRefObject<HTMLDivElement | null>;
+}) {
+  const [opacity, setOpacity] = useState(1);
+
+  useEffect(() => {
+    let rafId: number;
+    const update = () => {
+      const wrapper = wrapperRef.current;
+      if (wrapper) {
+        const rect = wrapper.getBoundingClientRect();
+        const wrapperHeight = wrapper.offsetHeight;
+        const viewportH = window.innerHeight;
+        const scrolled = -rect.top;
+        const scrollableDistance = wrapperHeight - viewportH;
+        const progress =
+          scrollableDistance > 0
+            ? Math.max(0, Math.min(1, scrolled / scrollableDistance))
+            : 0;
+        // Fade out over the first 8% of scroll progress
+        setOpacity(Math.max(0, 1 - progress / 0.08));
+      }
+      rafId = requestAnimationFrame(update);
+    };
+    rafId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(rafId);
+  }, [wrapperRef]);
+
+  if (opacity === 0) return null;
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        bottom: "2.5rem",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "0.5rem",
+        zIndex: 20,
+        opacity,
+        transition: "opacity 0.3s ease",
+        pointerEvents: "none",
+        userSelect: "none",
+      }}
+    >
+      <span
+        style={{
+          fontSize: "0.6875rem",
+          fontWeight: 500,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "rgba(243,239,232,0.55)",
+        }}
+      >
+        Scroll
+      </span>
+      {/* Animated chevron */}
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ animation: "scrollBounce 1.6s ease-in-out infinite" }}
+      >
+        <path
+          d="M4 7l6 6 6-6"
+          stroke="rgba(220,160,116,0.85)"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+/* ───────────────────────────────────────────────────────
    HeroSequence Component
    ─────────────────────────────────────────────────────── */
 export function HeroSequence({ frameCount }: HeroSequenceProps) {
@@ -355,6 +440,9 @@ export function HeroSequence({ frameCount }: HeroSequenceProps) {
 
         {/* Headlines */}
         <HeadlineCarousel easedProgressRef={easedProgressRef} />
+
+        {/* Scroll indicator */}
+        <ScrollIndicator wrapperRef={wrapperRef} />
 
         {/* Static fallback image for mobile/reduced-motion */}
         {!shouldAnimate && (
