@@ -35,15 +35,6 @@ const projects: Project[] = [
   },
   {
     id: "02",
-    title: "NotePulse",
-    tagline: "Markdown Note-Taking & Synchronization Platform",
-    description:
-      "A rich markdown note-taking environment featuring real-time local auto-saving, robust categorization, full-text search, and offline-first capabilities. Leverages custom synchronization routines to securely backup and restore notes across devices.",
-    tech: ["React", "Next.js", "Tailwind CSS", "MongoDB", "Node.js", "Express"],
-    github: "https://github.com/shlokgitt/note-pulse",
-  },
-  {
-    id: "03",
     title: "Travel Booking",
     tagline: "Cinematic Travel Itinerary Planner & Booking System",
     description:
